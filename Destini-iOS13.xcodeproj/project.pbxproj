@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374ECA8D250318790041272F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECA8C250318790041272F /* Extensions.swift */; };
 		AD7631D422FC5E7E00C6E71B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7631D322FC5E7E00C6E71B /* AppDelegate.swift */; };
 		AD7631D622FC5E7E00C6E71B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7631D522FC5E7E00C6E71B /* SceneDelegate.swift */; };
 		AD7631D822FC5E7E00C6E71B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7631D722FC5E7E00C6E71B /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		374ECA8C250318790041272F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AD7631D022FC5E7E00C6E71B /* Destini-iOS13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Destini-iOS13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7631D322FC5E7E00C6E71B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7631D522FC5E7E00C6E71B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		374ECA8B2503184F0041272F /* Recurses */ = {
+			isa = PBXGroup;
+			children = (
+				AD7631D522FC5E7E00C6E71B /* SceneDelegate.swift */,
+				AD7631D322FC5E7E00C6E71B /* AppDelegate.swift */,
+				374ECA8C250318790041272F /* Extensions.swift */,
+			);
+			path = Recurses;
+			sourceTree = "<group>";
+		};
 		AD7631C722FC5E7D00C6E71B = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +75,7 @@
 		AD7631D222FC5E7E00C6E71B /* Destini-iOS13 */ = {
 			isa = PBXGroup;
 			children = (
-				AD7631D322FC5E7E00C6E71B /* AppDelegate.swift */,
-				AD7631D522FC5E7E00C6E71B /* SceneDelegate.swift */,
+				374ECA8B2503184F0041272F /* Recurses */,
 				AD7631EB22FC64C900C6E71B /* Model */,
 				AD7631E822FC64AB00C6E71B /* View */,
 				AD7631E722FC64A100C6E71B /* Controller */,
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7631ED22FC64E400C6E71B /* StoryBrain.swift in Sources */,
+				374ECA8D250318790041272F /* Extensions.swift in Sources */,
 				AD7631D822FC5E7E00C6E71B /* ViewController.swift in Sources */,
 				AD7631D422FC5E7E00C6E71B /* AppDelegate.swift in Sources */,
 				AD7631D622FC5E7E00C6E71B /* SceneDelegate.swift in Sources */,
