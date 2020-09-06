@@ -10,19 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let stories = [
-        Story(title: "You see a fork in the road", choice1: "Take a left.", choice2: "Take a right."),
-        Story(title: "You see a tiger", choice1: "Shout for help.", choice2: "Play dead."),
-        Story(title: "You find a treasure chest", choice1: "Open it.", choice2: "Check for traps.")
-    ]
+    var storyBrain = StoryBrain()
     
-    let example = Story(title: "You see a fork in the road", choice1: "Take a left.", choice2: "Take a right.")
     
     private let storyLabel: UILabel = {
         let label = UILabel()
-            label.font = .systemFont(ofSize: 19, weight: .regular)
+        label.font = .systemFont(ofSize: 19, weight: .regular)
         label.textColor = .white
-            label.numberOfLines = 0
+        label.numberOfLines = 0
         
         return label
     }()
@@ -50,9 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- //       storyLabel.text = story
-//        choice1Button.setTitle(choice1, for: .normal)
-//        choice2Button.setTitle(choice2, for: .normal)
+        updateUI()
         
         choice1Button.addTarget(self, action: #selector(choiceMade), for: .touchUpInside)
         choice2Button.addTarget(self, action: #selector(choiceMade), for: .touchUpInside)
@@ -67,9 +60,9 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         imageView.frame = view.bounds
         storyLabel.frame = CGRect(x: 16,
-                                  y: view.frame.midY - 100,
+                                  y: view.frame.midY - 150,
                                   width: view.width - 32,
-                                  height: 50)
+                                  height: 190)
         choice1Button.frame = CGRect(x: 16,
                                      y: view.height - 150,
                                      width: (view.frame.width - 32),
@@ -80,8 +73,23 @@ class ViewController: UIViewController {
                                      height: 60)
     }
     
-    @objc private func choiceMade() {
+    @objc private func choiceMade(_ sender: UIButton) {
+        guard let button = sender.titleLabel?.text else {
+            return
+        }
+        storyBrain.nextStory(userChoice: button)
+        updateUI()
         
+        
+    }
+    
+    
+    private func updateUI(){
+        let index = storyBrain.currentStory
+        let story = storyBrain.stories[index]
+        storyLabel.text = story.title
+        choice1Button.setTitle(story.choice1, for: .normal)
+        choice2Button.setTitle(story.choice2, for: .normal)
     }
     
 }
